@@ -3,13 +3,16 @@ package ru.netology.radioman;
 public class Radio {
 
 
-    private int amountStation = 10;
+    private int amountStation = 20;
     private int maxStation = amountStation - 1;
     private int minStation = 0;
-    private int currentNumberStation = minStation;
+    private int currentNumberStation;
 
-    public Radio(int amountStation) {
+    public Radio(int maxStation, int minStation, int amountStation) {
         this.amountStation = amountStation;
+        this.minStation = minStation;
+        this.maxStation = amountStation -1;
+        this.currentNumberStation = minStation;
     }
 
     public Radio() {

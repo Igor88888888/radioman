@@ -9,9 +9,11 @@ public class RadioTest {
     @Test
 
     public void test() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio(19,0,20);
 
-        Assertions.assertEquals(10, radio.getAmountStation());
+        Assertions.assertEquals(19, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getMinStation());
+        Assertions.assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
@@ -20,34 +22,34 @@ public class RadioTest {
 
         Radio radio = new Radio();
 
-        radio.setCurrentNumberStation(8);
+        radio.setCurrentNumberStation(15);
 
-        int expected = 8;
+        int expected = 15;
         int actual = radio.getCurrentNumberStation();
 
         Assertions.assertEquals(expected, actual);
 
     }
 
-    @Test
+   // @Test
 
-    public void currentNumberStation() { // между 0 и 9
+    //public void currentNumberStation() {
 
-        Radio radio = new Radio();
-        radio.setCurrentNumberStation(9);
+     //   Radio radio = new Radio();
+       // radio.setCurrentNumberStation(19);
 
-        int expected = 9;
-        int actual = radio.getCurrentNumberStation();
+     //   int expected = 19;
+     //   int actual = radio.getCurrentNumberStation();
 
-        Assertions.assertEquals(expected, actual);
-    }
+     //   Assertions.assertEquals(expected, actual);
+    //}
 
     @Test
 
     public void upperCurrentNumberStation() { // больше 9
 
         Radio radio = new Radio();
-        radio.setCurrentNumberStation(10);
+        radio.setCurrentNumberStation(20);
 
         int expected = 0;
         int actual = radio.getCurrentNumberStation();
@@ -108,7 +110,7 @@ public class RadioTest {
         radio.setCurrentNumberStation(radio.getMinStation());
         radio.prevStation();
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentNumberStation();
 
         Assertions.assertEquals(expected, actual);
